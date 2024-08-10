@@ -1,0 +1,125 @@
+*{
+    margin : 0px;
+    padding : 0px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/Todoimg3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    background-color:rgb(196, 25, 82);
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.navbar > li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display : flex;
+}
+.navbar a {
+    text-decoration: none;
+    color : white;
+}
+.navbar a:hover {
+    color: whitesmoke;
+}
+.container {
+    margin-top: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,  0,0, 0.2);
+}
+h1{
+    color: rgb(196, 25, 82);
+}
+.gif{
+    background-image: url('../images/TodoGIF2.png');
+    background-repeat: no-repeat;
+    height: 90px;
+    width:90px;
+    background-size: cover;
+    float: right;
+}
+.gif1{
+    background-image: url('../images/TodoGIF1.gif');
+    background-repeat: no-repeat;
+    height: 50px;
+    width:50px;
+    background-size: cover;
+    margin-left: 130px;
+    margin-bottom: -10px;
+}
+#todo-container {
+    margin-top: 20px;
+}
+.input-container {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+#add-button{
+    border-radius: 5px;
+}
+.input-container input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid rgb(196, 25, 82);
+    border-radius: 4px 0 0 4px;
+}
+
+.input-container button {
+    padding: 10px 20px;
+    background-color: rgb(196, 25, 82);
+    color: #fff;
+    border: 1px solid rgb(196, 25, 82);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    color: white;
+    background-color: rgb(196, 25, 82);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+
+li.completed {
+    background-color: rgb(229, 43, 105);
+    text-decoration: line-through;
+    color : white;
+}
+
+button {
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+#clear-completed-btn{
+    height : 30px;
+    width : 150px;
+    color:aliceblue;
+    background-color: rgb(196, 25, 82);
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+        <nav>
+            <ul class = "navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <div class = "gif">
+        </div>
+        <div class = "gif1">
+        </div>
+        <h1> To-Do List </h1>
+        <div id="todo-container">
+            <div class="input-container">
+                <input type="text" id="new-todo" placeholder="Add a new task">
+                <button id="add-button">Add</button>
+            </div>
+            <ul id="todo-list"></ul>
+            <button id="clear-completed-btn">Remove Completed</button>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const todoList = document.getElementById('todo-list');
+    const newTodoInput = document.getElementById('new-todo');
+    const addButton = document.getElementById('add-button');
+    const clearCompletedButton = document.getElementById('clear-completed-btn');
+    function createTodoItem(text) {
+        const listItem = document.createElement('li');
+        const checkbox = document.createElement('input');
+        const label = document.createElement('span');
+        const deleteButton = document.createElement('button');
+        checkbox.type = 'checkbox';
+        label.textContent = text;
+        deleteButton.textContent = 'Delete';
+        listItem.appendChild(checkbox);
+        listItem.appendChild(label);
+        listItem.appendChild(deleteButton);
+        checkbox.addEventListener('change', function() {
+            listItem.classList.toggle('completed');
+        });
+        deleteButton.addEventListener('click', function() {
+            todoList.removeChild(listItem);
+        });
+        return listItem;
+    }
+    addButton.addEventListener('click', function() {
+        const newTodoText = newTodoInput.value.trim();
+        if (newTodoText) {
+            const newItem = createTodoItem(newTodoText);
+            todoList.appendChild(newItem);
+            newTodoInput.value = '';
+        }
+    });
+    clearCompletedButton.addEventListener('click', function() {
+        const completedItems = todoList.querySelectorAll('.completed');
+        completedItems.forEach(item => {
+            todoList.removeChild(item);
+        });
+    });
+});
+    </script>
+</body>
+</html>
